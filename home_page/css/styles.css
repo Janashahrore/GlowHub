@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #FAF3E0;
+
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(190, 220, 200, 0.35) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(230, 190, 210, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 60% 80%, rgba(190, 220, 200, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 10% 75%, rgba(230, 190, 210, 0.25) 0%, transparent 45%);
+}
+
+
+.header {
+    padding: 10px;
+}
+
+.header_container{ 
+    display: flex;
+    align-items: center;   /* يخليهم بنفس المستوى */
+}
+
+.logo {
+    width: 60px;        /* اتحكم بالحجم */
+    height: 60px;       /* لازم يكون نفس العرض */
+    border-radius: 50%; /* بخليها دائرة */
+    object-fit: cover;  /* بقص الصورة بشكل مرتب */
+}
+
+.brand_name {
+    margin-left: 10px;
+    font-size: 32px;
+    color:#d4a744;
+    font-family: 'Great Vibes', cursive;/*عشان اعمل الخط الي بدي اياه*/
+}
+ 
+
+.welcome{
+   font-size: 18px;
+    color:#d4a744;
+
+    font-weight: bold;
+    padding: 15px 30px;
+
+   /* font-family: 'Playfair Display', serif;*/
+
+
+
+
+    
+    display: flex-start;
+    justify-content: space-between; /* يوزّع العناصر: أول عنصر على الشمال، وآخر عنصر على اليمين */
+    align-items: center;            /* يخليهم بنفس المستوى عموديًا */
+    width: 100%;
+    
+
+
+
+  /* 
+    
+
+    padding: 10px 30px;*/
+   /* display: flex;*/
+   /* justify-content: space-between;*/ /* الشمال واليمين */
+    /*align-items: center;   */         /* على نفس المستوى عموديًا */
+
+ 
+    
+    
+    font-family: 'Playfair Display', serif; /* اختياري لستايل أنيق */
+
+}
+
+
+
+.bg img {
+    width: 100%;        /* تمتد من اليسار لليمين */
+    height: 400px;      /* ارتفاع ثابت مناسب */
+   /* object-fit: cover;*/  /* يقص الصورة بشكل مرتب إذا غيرت نسبتها */
+    /*display: block; */    /* يشيل أي فراغ أسفل الصورة */
+    border-radius: 20px;  /* الحواف الدائرية */
+}
+
+
+/*---------------------------------------*/
+
+.categories {
+    display: flex;
+    flex-direction: column; /* بخليهم تحت بعض */
+    align-items: center;    /* يوسّطهم بالصفحة */
+    gap: 20px;              /* مسافة بين الأزرار */
+    margin: 40px ;       /* مسافة تحت الصورة */
+}
+
+.btn {
+    text-decoration: none;        /* يشيل underline */
+    background-color: #D6A99D;  /* لون وردي ناعم */
+    color: white;                 /* لون النص */
+    padding: 40px 200px;           /* حجم الزر */
+    border-radius: 30px;          /* حواف دائرية كبيرة */
+    font-size: 35px;       /*20*/        /* حجم الخط */
+    font-weight: bold;
+    transition: 0.2s;         /* حركة عند hover */
+}
+
+.btn:hover {
+    background-color: #EE6983;    /* لون عند المرور بالماوس */
+    transform: scale(1.05);       /* تكبير خفيف */
+}
+
+
+
+/* FOOTER */
+.site-footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  background: #A1BC98;
+  margin-top: 24px;
+}
+
+.footer-inner {
+  text-align: center;
+  /*color: var(--muted);*/
+  color: #ffffff;
+}
+
+.linkish {
+  text-decoration: underline;
+  color: #E06B80;
+}
