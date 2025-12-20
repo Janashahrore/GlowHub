@@ -16,10 +16,20 @@ body {
     padding: 10px;
 }
 
-.header_container{ 
-    display: flex;
-    align-items: center;   /* يخليهم بنفس المستوى */
+.navbar {
+  display: flex;
+  align-items: center; /* يخليهم بنفس المستوى */
+  justify-content: space-between; /* كل طرف لحاله */
+ /* padding: 10px;*/
 }
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+ /* gap: 10px;*/
+}
+
 
 .logo {
     width: 60px;        /* اتحكم بالحجم */
@@ -43,33 +53,12 @@ body {
     font-weight: bold;
     padding: 15px 30px;
 
-   /* font-family: 'Playfair Display', serif;*/
+    font-family: 'Playfair Display', serif; /* اختياري لستايل أنيق */
 
-
-
-
-    
     display: flex-start;
     justify-content: space-between; /* يوزّع العناصر: أول عنصر على الشمال، وآخر عنصر على اليمين */
     align-items: center;            /* يخليهم بنفس المستوى عموديًا */
     width: 100%;
-    
-
-
-
-  /* 
-    
-
-    padding: 10px 30px;*/
-   /* display: flex;*/
-   /* justify-content: space-between;*/ /* الشمال واليمين */
-    /*align-items: center;   */         /* على نفس المستوى عموديًا */
-
- 
-    
-    
-    font-family: 'Playfair Display', serif; /* اختياري لستايل أنيق */
-
 }
 
 
@@ -77,13 +66,11 @@ body {
 .bg img {
     width: 100%;        /* تمتد من اليسار لليمين */
     height: 400px;      /* ارتفاع ثابت مناسب */
-   /* object-fit: cover;*/  /* يقص الصورة بشكل مرتب إذا غيرت نسبتها */
-    /*display: block; */    /* يشيل أي فراغ أسفل الصورة */
     border-radius: 20px;  /* الحواف الدائرية */
 }
 
 
-/*---------------------------------------*/
+/*-----------------للازرار----------------------*/
 
 .categories {
     display: flex;
@@ -126,6 +113,8 @@ body {
 }
 
 .linkish {
-  text-decoration: underline;
-  color: #E06B80;
+ 
+ text-decoration: none;   /* يشيل الخط اللي تحت */
+ color: #E06B80;
 }
+
