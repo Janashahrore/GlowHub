@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #FAF3E0;
+
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(190, 220, 200, 0.35) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(230, 190, 210, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 60% 80%, rgba(190, 220, 200, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 10% 75%, rgba(230, 190, 210, 0.25) 0%, transparent 45%);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #fad1e1d8;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leora   {
+  text-decoration: none;
+  color: #d4a744;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #d4a744;
+  font-weight: bold;
+}
+
+/* RESPONSIVE HEADER */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* HERO */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: rgba(255, 228, 239, 0.26);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* CATEGORIES */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px;
+}
+
+.categories button {
+  background-color: #F39EB6;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* PRODUCTS */
+.products-section {
+  padding: 40px;
+}
+
+.products-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background-color: #FFE4EF;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  color: #3a7f3a;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.cart-btn {
+  background-color: #B8DB80;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* DYE COLORS */
+.colors {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.color-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+/* TOAST MESSAGE */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #F39EB6;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px);
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* RESPONSIVE PRODUCTS */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
