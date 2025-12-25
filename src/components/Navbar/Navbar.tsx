@@ -10,117 +10,150 @@ const Navbar = () => {
   return (
     <AppBar position="static" style={{ backgroundColor: '#ffeff8', padding: '20px 0' }}>
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-        
-        {/* يسار: Logo + اسم المتجر */}
-           <Box display="flex" alignItems="center" gap={2}>
-  <Link to="/"> {/* هذا الرابط للصفحة الرئيسية */}
-    <img
-      src="/logo.png"
-      alt="Léora Logo"
-      style={{
-        width: '60px',
-        height: '60px',
-        borderRadius: '50%',
-        objectFit: 'cover',
-      }}
-    />
-  </Link>
 
-  <Typography
-    variant="h4"
-    component={Link} // حطي الرابط على اسم المتجر كمان
-    to="/"
-    style={{
-      fontFamily: "'Great Vibes', cursive",
-      color: '#d4a744',
-      textDecoration: 'none', // بدون underline
-    }}
-  >
-    Léora
-  </Typography>
-</Box>
+        {/* يسار: Logo + اسم المتجر + Login */}
+        <Box display="flex" alignItems="center" gap={2}>
 
+          <Link to="/"> {/* الرابط للصفحة الرئيسية */}
+            <img
+              src="/images/logo.png"
+              alt="Léora Logo"
+              style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+              }}
+            />
+          </Link>
+
+          <Box display="flex" alignItems="center" gap={1}>
+            <Typography
+              variant="h4"
+              component={Link} // اسم المتجر رابط للصفحة الرئيسية
+              to="/"
+              style={{
+                fontFamily: "'Great Vibes', cursive",
+                color: '#d4a744',
+                textDecoration: 'none',
+              }}
+            >
+              Léora
+            </Typography>
+
+            {/* شطّة */}
+            <Typography
+              variant="h5"
+              style={{ color: '#d4a744', fontWeight: 'bold' }}
+            >
+              |
+            </Typography>
+
+            {/* Login */}
+            <Typography
+              component={Link}
+              to="/login"
+              style={{
+                textDecoration: 'none',
+
+                color: isActive('/haircare') ? '#bfa338' : '#d4a744',
+                fontSize: '1.5rem',
+                transition: 'all 0.3s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#b08968';
+                e.currentTarget.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isActive('/haircare') ? '#9b782cff' : '#d4a744';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              Login
+            </Typography>
+          </Box>
+        </Box>
 
         {/* منتصف: روابط الأقسام */}
         <Box display="flex" gap={4}>
 
           <Button
-  component={Link}
-  to="/haircare"
-  style={{
-    color: isActive('/haircare') ? '#bfa338' : '#d4a744', // ذهبي للصفحة الحالية
-    fontWeight: 'bold',
-    fontSize: isActive('/haircare') ? '1.2rem' : '1rem',
-    transition: 'all 0.3s', // سلاسة الحركة
-  }}
-  onMouseEnter={(e) => {
-    const target = e.currentTarget;
-    target.style.color = '#b08968'; // بني عند Hover
-    target.style.fontSize = '1.3rem'; // تكبر شوي عند Hover
-  }}
-  onMouseLeave={(e) => {
-    const target = e.currentTarget;
-    target.style.color = isActive('/haircare') ? '#9b782cff' : '#d4a744'; // يرجع حسب الصفحة الحالية
-    target.style.fontSize = isActive('/haircare') ? '1.2rem' : '1rem'; // يرجع حسب الصفحة الحالية
-  }}
->
-  Hair Care
-</Button>
+            component={Link}
+            to="/haircare"
+            style={{
+              color: isActive('/haircare') ? '#bfa338' : '#d4a744',
+              fontWeight: 'bold',
+              fontSize: isActive('/haircare') ? '1.2rem' : '1rem',
+              transition: 'all 0.3s',
+            }}
+            onMouseEnter={(e) => {
+              const target = e.currentTarget;
+              target.style.color = '#b08968';
+              target.style.fontSize = '1.3rem';
+            }}
+            onMouseLeave={(e) => {
+              const target = e.currentTarget;
+              target.style.color = isActive('/haircare') ? '#9b782cff' : '#d4a744';
+              target.style.fontSize = isActive('/haircare') ? '1.2rem' : '1rem';
+            }}
+          >
+            Hair Care
+          </Button>
 
-         <Button
-  component={Link}
-  to="/skincare"
-  style={{
-    color: isActive('/skincare') ? '#bfa338' : '#d4a744', // ذهبي للصفحة الحالية
-    fontWeight: 'bold',
-    fontSize: isActive('/skincare') ? '1.2rem' : '1rem',
-    transition: 'all 0.3s', // حركة سلسة
-  }}
-  onMouseEnter={(e) => {
-    const target = e.currentTarget;
-    target.style.color = '#b08968'; // بني عند Hover
-    target.style.fontSize = '1.3rem'; // تكبر شوي عند Hover
-  }}
-  onMouseLeave={(e) => {
-    const target = e.currentTarget;
-    target.style.color = isActive('/skincare') ? '#9b782cff' : '#d4a744'; // يرجع حسب الصفحة الحالية
-    target.style.fontSize = isActive('/skincare') ? '1.2rem' : '1rem'; // يرجع حسب الصفحة الحالية
-  }}
->
-  Skin Care
-</Button>
+          <Button
+            component={Link}
+            to="/skincare"
+            style={{
+              color: isActive('/skincare') ? '#bfa338' : '#d4a744',
+              fontWeight: 'bold',
+              fontSize: isActive('/skincare') ? '1.2rem' : '1rem',
+              transition: 'all 0.3s',
+            }}
+            onMouseEnter={(e) => {
+              const target = e.currentTarget;
+              target.style.color = '#b08968';
+              target.style.fontSize = '1.3rem';
+            }}
+            onMouseLeave={(e) => {
+              const target = e.currentTarget;
+              target.style.color = isActive('/skincare') ? '#9b782cff' : '#d4a744';
+              target.style.fontSize = isActive('/skincare') ? '1.2rem' : '1rem';
+            }}
+          >
+            Skin Care
+          </Button>
 
-           <Button
-  component={Link}
-  to="/makeup"
-  style={{
-    color: isActive('/makeup') ? '#bfa338' : '#d4a744', // ذهبي للصفحة الحالية
-    fontWeight: 'bold',
-    fontSize: isActive('/makeup') ? '1.2rem' : '1rem',
-    transition: 'all 0.3s', // حركة سلسة
-  }}
-  onMouseEnter={(e) => {
-    const target = e.currentTarget;
-    target.style.color = '#b08968'; // بني عند Hover
-    target.style.fontSize = '1.3rem'; // تكبر شوي عند Hover
-  }}
-  onMouseLeave={(e) => {
-    const target = e.currentTarget;
-    target.style.color = isActive('/makeup') ? '#9b782cff' : '#d4a744'; // يرجع حسب الصفحة الحالية
-    target.style.fontSize = isActive('/makeup') ? '1.2rem' : '1rem'; // يرجع حسب الصفحة الحالية
-  }}
->
-  Makeup ♥
-</Button>
-
+          <Button
+            component={Link}
+            to="/makeup"
+            style={{
+              color: isActive('/makeup') ? '#bfa338' : '#d4a744',
+              fontWeight: 'bold',
+              fontSize: isActive('/makeup') ? '1.2rem' : '1rem',
+              transition: 'all 0.3s',
+            }}
+            onMouseEnter={(e) => {
+              const target = e.currentTarget;
+              target.style.color = '#b08968';
+              target.style.fontSize = '1.3rem';
+            }}
+            onMouseLeave={(e) => {
+              const target = e.currentTarget;
+              target.style.color = isActive('/makeup') ? '#9b782cff' : '#d4a744';
+              target.style.fontSize = isActive('/makeup') ? '1.2rem' : '1rem';
+            }}
+          >
+            Makeup ♥
+          </Button>
         </Box>
+
         {/* يمين: Welcome! */}
         <Typography
           variant="h5"
           style={{
             fontFamily: "'Great Vibes', cursive",
             color: '#d4a744',
-             fontSize: '2rem', // هذا الحجم اللي رح يتحكم بالكلمة مباشرة
+            fontSize: '2rem',
           }}
         >
           Welcome!
@@ -130,4 +163,5 @@ const Navbar = () => {
     </AppBar>
   );
 };
+
 export default Navbar;

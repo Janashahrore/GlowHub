@@ -7,7 +7,7 @@ const Home = () => {
       {/* الصورة بحواف دائرية */}
       <Box
         component="img"
-        src="/bg.png" // حطي صورتك هنا
+        src="/images/bg.png" // حطي صورتك هنا
         alt="Home Banner"
         sx={{
           width: '100%',
@@ -17,7 +17,7 @@ const Home = () => {
           mb: 5, // مسافة تحت الصورة
         }}
       />
-
+  
       {/* الأزرار تحت بعض */}
       <Box
         display="flex"
