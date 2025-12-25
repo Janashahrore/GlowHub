@@ -7,6 +7,14 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Navbar from './components/Navbar/Navbar'; // استدعاء الـ Navbar
+import Footer from "./components/Footer/Footer";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme/Theme";
+
+<ThemeProvider theme={theme}>
+  <App />
+</ThemeProvider>
+
 
 function App() {
   return (
@@ -23,6 +31,8 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
