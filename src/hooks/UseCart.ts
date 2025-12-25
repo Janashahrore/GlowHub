@@ -1,9 +1,10 @@
-/*
-ليش؟
-السلة منطقها مش UI
+import { useState } from 'react';
 
-شو فيه؟
-add to cart
-remove from cart
-total price
-*/
+export const useCart = () => {
+  const [cartItems, setCartItems] = useState<any[]>([]); // مصفوفة فاضية مؤقت
+
+  return {
+    cartItems,
+    setCartItems,
+  };
+};

@@ -1,14 +1,30 @@
-/*
-theme.ts
-ليش؟
-ألوان الموقع
-هوية Léora (بينك + خوخي)
+// add command on terminal 
+// npm install @mui/material @emotion/react @emotion/styled
+import { createTheme } from '@mui/material/styles';
 
-شو فيه؟
-primary color
-secondary color
-background
-typography
+// ألوان الموقع
+const colors = {
+  primary: '#ffeff8',
+  secondary: '#d4a744',
+  background: '#ffeff8',
+  text: '#cccccc',
+};
 
-📌 مربوط بـ MUI ThemeProvider
-*/
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: colors.primary,
+    },
+    secondary: {
+      main: colors.secondary,
+    },
+    background: {
+      default: colors.background,
+    },
+    text: {
+      primary: colors.text,
+    },
+  },
+});
+
+export default theme;
