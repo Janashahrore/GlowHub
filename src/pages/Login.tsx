@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, TextField, Typography, Container, Paper } from '@mui/material';
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
+
+  const handleLogin = () => {
+    // Regex لفحص الإيميل
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      setEmailError(true);
+      return;
+    }
+
+    setEmailError(false);
+  };
+
   return (
     <Box
       sx={{
         minHeight: '100vh',
+        mt: 2,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -46,6 +62,10 @@ const Login: React.FC = () => {
             variant="outlined"
             fullWidth
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            error={emailError}
+            helperText={emailError ? 'Please enter a valid email address' : ''}
           />
           <TextField
             label="Password"
@@ -55,10 +75,11 @@ const Login: React.FC = () => {
             required
           />
           <Button
-            variant="contained"
-            color="secondary"
-            fullWidth
-            sx={{ mt: 1 }}
+          variant="contained"
+          color="secondary"
+          fullWidth
+          sx={{ mt: 1 }}
+          onClick={handleLogin}
           >
             Login
           </Button>

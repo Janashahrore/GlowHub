@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: "#d7bf97bd", // لون بني فاتح (بيج)
+        bgcolor: "#d7bf97bd",
         color: "#5a4a42",
         py: 6,
         px: { xs: 3, md: 6 },

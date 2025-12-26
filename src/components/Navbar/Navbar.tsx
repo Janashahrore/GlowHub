@@ -8,7 +8,8 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <AppBar position="static" style={{ backgroundColor: '#ffeff8', padding: '20px 0' }}>
+    <AppBar position="static" elevation={4} style={{ backgroundColor: '#ffeff8', padding: '20px 0' }}>
+    
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
 
         {/* يسار: Logo + اسم المتجر + Login */}

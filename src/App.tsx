@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Haircare from './pages/Haircare';
+import Haircare from './pages/HairCare/Haircare';
 import Skincare from './pages/Skincare';
 import Makeup from './pages/Makeup';
 import Cart from './pages/Cart';
