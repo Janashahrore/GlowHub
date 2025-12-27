@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./theme/Theme";
+import { CartProvider } from "./context/CartContext";
 
 const root = createRoot(document.getElementById("root")!);
 
@@ -13,11 +14,15 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode>
 );
+
+
 
 /*
 import React from 'react';

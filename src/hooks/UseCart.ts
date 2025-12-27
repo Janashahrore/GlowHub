@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 export const useCart = () => {
-  const [cartItems, setCartItems] = useState<any[]>([]); // مصفوفة فاضية مؤقت
+  const context = useContext(CartContext);
 
-  return {
-    cartItems,
-    setCartItems,
-  };
+  if (!context) {
+    throw new Error("useCart must be used inside CartProvider");
+  }
+
+  return context;
 };

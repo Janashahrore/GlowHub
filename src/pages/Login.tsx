@@ -6,7 +6,6 @@ const Login: React.FC = () => {
   const [emailError, setEmailError] = useState(false);
 
   const handleLogin = () => {
-    // Regex لفحص الإيميل
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -25,7 +24,7 @@ const Login: React.FC = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ffeff8', // نفس لون الخلفية لباقي الصفحات
+        backgroundColor: '#ffeff8',
         padding: 2,
       }}
     >
@@ -34,7 +33,7 @@ const Login: React.FC = () => {
           elevation={3}
           sx={{
             padding: 4,
-            backgroundColor: '#fff', // لون خلفية البطاقه
+            backgroundColor: '#fff',
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
@@ -44,7 +43,7 @@ const Login: React.FC = () => {
             variant="h4"
             component="h1"
             align="center"
-            sx={{ color: '#d4a744' }} // نفس لون ثانوي
+            sx={{ color: '#d4a744' }}
           >
             Login
           </Typography>
@@ -56,6 +55,7 @@ const Login: React.FC = () => {
             Please login to access your account.
           </Typography>
 
+          {/* Email Field */}
           <TextField
             label="Email"
             type="email"
@@ -66,20 +66,61 @@ const Login: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             error={emailError}
             helperText={emailError ? 'Please enter a valid email address' : ''}
+            InputLabelProps={{
+              sx: {
+                color: '#ccc', // لون الـ label
+                '&.Mui-focused': {
+                  color: '#000000ff', // عند التركيز
+                },
+              },
+            }}
+            InputProps={{
+              sx: {
+                color: '#000000ff', // لون النص الذي يدخله المستخدم
+                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#000000ff', // لون الحواف عند التركيز
+                },
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#ccc', // لون الحواف الافتراضي
+                },
+              },
+            }}
           />
+
+          {/* Password Field */}
           <TextField
             label="Password"
             type="password"
             variant="outlined"
             fullWidth
             required
+            InputLabelProps={{
+              sx: {
+                color: '#ccc',
+                '&.Mui-focused': {
+                  color: '#000000ff',
+                },
+              },
+            }}
+            InputProps={{
+              sx: {
+                color: '#000000ff',
+                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#000000ff',
+                },
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#ccc',
+                },
+              },
+            }}
           />
+
           <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          sx={{ mt: 1 }}
-          onClick={handleLogin}
+            variant="contained"
+            color="secondary"
+            fullWidth
+            sx={{ mt: 1 }}
+            onClick={handleLogin}
           >
             Login
           </Button>
