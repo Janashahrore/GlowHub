@@ -1,32 +1,60 @@
+
+
+
+
 import React, { useState } from 'react';
 import { Box, TextField, Button, Typography, Paper } from '@mui/material';
 import theme from '../theme/Theme';
-import Header from '../components/Navbar/Navbar'; // استدعاء الهيدر
+import { useCart } from '../context/CartContext';
 
 const Checkout: React.FC = () => {
+  const { cartItems, clearCart } = useCart();
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  // مثال للمشتريات من السلة
-  const cartItems = [
-    { name: 'Cute Plush Toy', price: 20 },
-    { name: 'Gold Notebook', price: 15 },
-    { name: 'Pink Mug', price: 10 },
-  ];
-
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const handleSubmit = () => {
+    if (!name || !address || !phone || !email) {
+      alert("Please fill all fields!");
+      return;
+    }
     setSubmitted(true);
+    clearCart(); // يفضي الكارت بعد الشراء
+  };
+
+  const textFieldStyle = {
+    mb: 2,
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#ccc',
+      },
+      '&:hover fieldset': {
+        borderColor: '#ff5fa2',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#ff5fa2',
+      },
+    },
+    '& .MuiInputBase-input': {
+      color: '#776c6cff',
+    },
+    '& .MuiInputLabel-root': {
+      color: '#afa8a8ff',
+    },
+    '& .MuiInputLabel-root.Mui-focused': {
+      color: '#ff5fa2',
+    },
   };
 
   return (
     <Box
       sx={{
         minHeight: '100vh',
+        mt: 2,
         backgroundColor: theme.palette.background.default,
         display: 'flex',
         flexDirection: 'column',
@@ -34,10 +62,6 @@ const Checkout: React.FC = () => {
         padding: 3,
       }}
     >
-      {/* Header */}
-      <Header />
-
-      {/* Checkout Form */}
       {!submitted ? (
         <Paper
           sx={{
@@ -50,68 +74,76 @@ const Checkout: React.FC = () => {
             mt: 4,
           }}
         >
-          <Typography variant="h5" sx={{ mb: 2, color: theme.palette.primary.main }}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, color: '#ff5fa2' }}>
             Complete Your Purchase
           </Typography>
 
           <TextField
             label="Full Name"
-            variant="outlined"
             fullWidth
             value={name}
             onChange={(e) => setName(e.target.value)}
-            sx={{ mb: 2 }}
+            sx={textFieldStyle}
           />
+
           <TextField
             label="Address"
-            variant="outlined"
             fullWidth
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            sx={{ mb: 2 }}
+            sx={textFieldStyle}
           />
+
           <TextField
             label="Phone Number"
-            variant="outlined"
             fullWidth
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            sx={{ mb: 2 }}
+            sx={textFieldStyle}
           />
+
           <TextField
             label="Email"
-            variant="outlined"
             fullWidth
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            sx={{ mb: 2 }}
+            sx={textFieldStyle}
           />
 
-          {/* Cart Summary */}
           <Box sx={{ mb: 2 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1, color: '#8b8b8bff' }}>
               Your Cart:
             </Typography>
-            {cartItems.map((item, index) => (
-              <Typography key={index}>
-                {item.name} - ${item.price}
-              </Typography>
-            ))}
-            <Typography sx={{ fontWeight: 'bold', mt: 1 }}>Total: ${total}</Typography>
+            {cartItems.length === 0 ? (
+              <Typography>Your cart is empty</Typography>
+            ) : (
+              cartItems.map((item) => (
+                <Typography key={item.id}>
+                  {item.title} - {item.quantity} x ${item.price}
+                </Typography>
+              ))
+            )}
+            <Typography sx={{ fontWeight: 'bold', mt: 1, color: '#bfa338' }}>
+              Total: ${total}
+            </Typography>
           </Box>
 
-          <Button
-            variant="contained"
-            color="secondary"
+           <Button
             fullWidth
             onClick={handleSubmit}
-            sx={{ mt: 2 }}
+            sx={{
+              mt: 2,
+              backgroundColor: '#ff5fa2',
+              color: '#fff',
+              '&:hover': {
+                backgroundColor: '#c22b6aff',
+              },
+            }}
           >
             Confirm Purchase
           </Button>
         </Paper>
       ) : (
-        // Thank you message
         <Paper
           sx={{
             padding: 4,
@@ -123,10 +155,11 @@ const Checkout: React.FC = () => {
             mt: 4,
           }}
         >
-          <Typography variant="h5" sx={{ mb: 2, color: theme.palette.primary.main }}>
+        
+          <Typography variant="h5" sx={{ mb: 2, color: '#c22b6aff' }}>
             Thank you for your order!
           </Typography>
-          <Typography>
+          <Typography sx={{ color: '#776c6cff' }}>
             Thank you for shopping with Léora 🎀 <br />
             Your package will arrive within 2 days.
           </Typography>
@@ -137,3 +170,24 @@ const Checkout: React.FC = () => {
 };
 
 export default Checkout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
