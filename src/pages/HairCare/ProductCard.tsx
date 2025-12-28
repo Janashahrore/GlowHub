@@ -1,14 +1,7 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  IconButton,
-} from "@mui/material";
+import { Card, CardMedia, CardContent, Typography, Box, IconButton } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
-import type { Product } from "../../api/hairApi";
+import type { Product } from "../../api/HairAPI";
 
 interface ProductCardProps {
   product: Product;

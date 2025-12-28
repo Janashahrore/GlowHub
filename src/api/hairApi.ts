@@ -15,7 +15,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Olive Oil",
     description: "Moisturizes and reduces breakage",
     price: 10,
-    image: "/hairimages/Hair Oils/Olive Oil-1.jpg",
+    image: "/HairImages/Hair Oils/Olive Oil-1.jpg",
     category: "Hair Oils",
   },
   {
@@ -23,7 +23,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Argan Oil",
     description: "Adds shine and nourishment",
     price: 20,
-    image: "/hairimages/Hair Oils/Argan Oil.avif",
+    image: "/HairImages/Hair Oils/Argan Oil.avif",
     category: "Hair Oils",
   },
   {
@@ -31,7 +31,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Castor Oil",
     description: "Stimulates growth and strengthens roots",
     price: 15,
-    image: "/hairimages/Hair Oils/Castor Oil.avif",
+    image: "/HairImages/Hair Oils/Castor Oil.avif",
     category: "Hair Oils",
   },
   {
@@ -39,7 +39,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Coconut Oil",
     description: "Prevents hair loss and deeply moisturizes",
     price: 10,
-    image: "/hairimages/Hair Oils/coconut oil.avif",
+    image: "/HairImages/Hair Oils/coconut oil.avif",
     category: "Hair Oils",
   },
   {
@@ -47,7 +47,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Jojoba Oil",
     description: "Lightweight, similar to natural oils",
     price: 15,
-    image: "/hairimages/Hair Oils/jojoba oil.avif",
+    image: "/HairImages/Hair Oils/jojoba oil.avif",
     category: "Hair Oils",
   },
   {
@@ -55,7 +55,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Rosemary Oil",
     description: "Supports growth and scalp health",
     price: 17,
-    image: "/hairimages/Hair Oils/Rosemary Oil.avif",
+    image: "/HairImages/Hair Oils/Rosemary Oil.avif",
     category: "Hair Oils",
   },
   {
@@ -63,7 +63,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Almond Oil",
     description: "Reduces dryness and frizz",
     price: 15,
-    image: "/hairimages/Hair Oils/Almond Oil.avif",
+    image: "/HairImages/Hair Oils/Almond Oil.avif",
     category: "Hair Oils",
   },
   {
@@ -71,7 +71,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Avocado Oil",
     description: "Maintains moisture and shine",
     price: 15,
-    image: "/hairimages/Hair Oils/Avocado Oil.avif",
+    image: "/HairImages/Hair Oils/Avocado Oil.avif",
     category: "Hair Oils",
   },
   {
@@ -79,7 +79,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Grapeseed Oil",
     description: "Very lightweight, adds shine",
     price: 10,
-    image: "/hairimages/Hair Oils/Grapeseed Oil.avif",
+    image: "/HairImages/Hair Oils/Grapeseed Oil.avif",
     category: "Hair Oils",
   },
   {
@@ -87,7 +87,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Apricot Oil",
     description: "Natural softness and shine",
     price: 12,
-    image: "/hairimages/Hair Oils/Apricot Oil.avif",
+    image: "/HairImages/Hair Oils/Apricot Oil.avif",
     category: "Hair Oils",
   },
 
@@ -97,7 +97,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Repair Mask",
     description: "Repairs damage and strengthens hair",
     price: 18,
-    image: "/hairimages/Hair Masks/Repair Mask.webp",
+    image: "/HairImages/Hair Masks/Repair Mask.webp",
     category: "Hair Masks",
   },
   {
@@ -105,7 +105,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Deep Conditioning Mask",
     description: "Moisturizes and adds shine",
     price: 20,
-    image: "/hairimages/Hair Masks/Deep Conditioning Mask.webp",
+    image: "/HairImages/Hair Masks/Deep Conditioning Mask.webp",
     category: "Hair Masks",
   },
   {
@@ -113,7 +113,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Oily Scalp Mask",
     description: "Reduces oil and dandruff",
     price: 10,
-    image: "/hairimages/Hair Masks/Oily Scalp Mask.webp",
+    image: "/HairImages/Hair Masks/Oily Scalp Mask.webp",
     category: "Hair Masks",
   },
   {
@@ -121,7 +121,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Purple Intensive Mask",
     description: "Treats split ends and frizz",
     price: 18,
-    image: "/hairimages/Hair Masks/Purple Mask.webp",
+    image: "/HairImages/Hair Masks/Purple Mask.webp",
     category: "Hair Masks",
   },
 
@@ -131,7 +131,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Deep Moisturizing Cream",
     description: "Treats dryness and split ends",
     price: 18,
-    image: "/hairimages/Hair Creams/Deep Moisturizing Cream.jpg",
+    image: "/HairImages/Hair Creams/Deep Moisturizing Cream.jpg",
     category: "Hair Creams",
   },
   {
@@ -139,7 +139,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Keratin & Shea Butter Cream",
     description: "Repairs split ends and prevents frizz",
     price: 15,
-    image: "/hairimages/Hair Creams/Keratin & Shea Butter Cream.webp",
+    image: "/HairImages/Hair Creams/Keratin & Shea Butter Cream.webp",
     category: "Hair Creams",
   },
 
@@ -149,7 +149,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Heat Protection Serum",
     description: "Apply before blow-drying",
     price: 10,
-    image: "/hairimages/Hair Serums/Heat Protection Serum.webp",
+    image: "/HairImages/Hair Serums/Heat Protection Serum.webp",
     category: "Hair Serums",
   },
   {
@@ -157,7 +157,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Shine & Smooth Serum",
     description: "Adds shine and reduces frizz",
     price: 12,
-    image: "/hairimages/Hair Serums/Shine & Smooth Serum.jpg",
+    image: "/HairImages/Hair Serums/Shine & Smooth Serum.jpg",
     category: "Hair Serums",
   },
   {
@@ -165,7 +165,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Serum for Colored Hair",
     description: "Maintains color vibrancy",
     price: 20,
-    image: "/hairimages/Hair Serums/Serum for Colored Hair.webp",
+    image: "/HairImages/Hair Serums/Serum for Colored Hair.webp",
     category: "Hair Serums",
   },
 
@@ -175,7 +175,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Daily Care Shampoo",
     description: "Gentle daily cleansing for all hair types",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Daily Care - Classic Clean Shampoo.avif",
+    image: "/HairImages/Pantene Shampoos/Pantene Daily Care - Classic Clean Shampoo.avif",
     category: "Shampoos",
   },
   {
@@ -183,7 +183,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Anti Hair Fall Shampoo",
     description: "Reduces hair fall and strengthens roots",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Anti Hair Fall Shampoo.webp",
+    image: "/HairImages/Pantene Shampoos/Pantene Anti Hair Fall Shampoo.webp",
     category: "Shampoos",
   },
   {
@@ -191,7 +191,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Anti-Dandruff Shampoo",
     description: "Treats dandruff and cleanses hair",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Anti-Dandruff Shampoo (2-in-1).webp",
+    image: "/HairImages/Pantene Shampoos/Pantene Anti-Dandruff Shampoo (2-in-1).webp",
     category: "Shampoos",
   },
   {
@@ -199,7 +199,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Smooth & Silky Shampoo",
     description: "Reduces frizz and adds softness",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Smooth & Silky Shampoo.jpg",
+    image: "/HairImages/Pantene Shampoos/Pantene Smooth & Silky Shampoo.jpg",
     category: "Shampoos",
   },
   {
@@ -207,7 +207,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Moisture Renewal Shampoo",
     description: "Moisturizes dry and brittle hair",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Moisture Renewal Shampoo.avif",
+    image: "/HairImages/Pantene Shampoos/Pantene Moisture Renewal Shampoo.avif",
     category: "Shampoos",
   },
   {
@@ -215,7 +215,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Colored Hair Repair Shampoo",
     description: "Maintains color and shine",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Colored Hair Repair Shampoo.avif",
+    image: "/HairImages/Pantene Shampoos/Pantene Colored Hair Repair Shampoo.avif",
     category: "Shampoos",
   },
   {
@@ -223,7 +223,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Nature Fusion Shampoo",
     description: "Botanical extracts for nourishment",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Nature Fusion Shampoo.webp",
+    image: "/HairImages/Pantene Shampoos/Pantene Nature Fusion Shampoo.webp",
     category: "Shampoos",
   },
   {
@@ -231,7 +231,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Sheer Volume Shampoo",
     description: "Adds volume and thickness",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Sheer Volume Shampoo.avif",
+    image: "/HairImages/Pantene Shampoos/Pantene Sheer Volume Shampoo.avif",
     category: "Shampoos",
   },
   {
@@ -239,7 +239,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Milky Damage Repair Shampoo",
     description: "Repairs damaged hair",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Milky Damage Repair Shampoo.jpg",
+    image: "/HairImages/Pantene Shampoos/Pantene Milky Damage Repair Shampoo.jpg",
     category: "Shampoos",
   },
   {
@@ -247,7 +247,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Pantene Micellar Shampoo",
     description: "Gentle cleansing without stripping oils",
     price: 10,
-    image: "/hairimages/Pantene Shampoos/Pantene Micellar Gentle Cleansing Shampoo.jpg",
+    image: "/HairImages/Pantene Shampoos/Pantene Micellar Gentle Cleansing Shampoo.jpg",
     category: "Shampoos",
   },
 
@@ -257,7 +257,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Babyliss Compact Hair Dryer",
     description: "2400W powerful dryer",
     price: 110,
-    image: "/hairimages/Babyliss hair care and styling products/Babyliss Compact Hair Dryer (2400 W).jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Babyliss Compact Hair Dryer (2400 W).jpg",
     category: "Hair Tools",
   },
   {
@@ -265,7 +265,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Babyliss Ionic Hair Dryer",
     description: "Reduces frizz with ionic technology",
     price: 90,
-    image: "/hairimages/Babyliss hair care and styling products/Babyliss Ionic Hair Dryer (2100 W).jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Babyliss Ionic Hair Dryer (2100 W).jpg",
     category: "Hair Tools",
   },
   {
@@ -273,7 +273,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Babyliss 2-in-1 Straightener",
     description: "Straightens and curls hair",
     price: 150,
-    image: "/hairimages/Babyliss hair care and styling products/Babyliss ST482E-ST330E 2-in-1 Straightener.jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Babyliss ST482E-ST330E 2-in-1 Straightener.jpg",
     category: "Hair Tools",
   },
   {
@@ -281,7 +281,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Babyliss Pro Straightener",
     description: "Professional straightener",
     price: 150,
-    image: "/hairimages/Babyliss hair care and styling products/Babyliss Pro Professional Straightener.jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Babyliss Pro Professional Straightener.jpg",
     category: "Hair Tools",
   },
   {
@@ -289,7 +289,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Babyliss Curl & Wave Trio",
     description: "3 interchangeable heads",
     price: 90,
-    image: "/hairimages/Babyliss hair care and styling products/Babyliss Curl & Wave Trio Curling and Wave Device.jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Babyliss Curl & Wave Trio Curling and Wave Device.jpg",
     category: "Hair Tools",
   },
   {
@@ -297,7 +297,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Electric Curling Iron",
     description: "Traditional curls",
     price: 50,
-    image: "/hairimages/Babyliss hair care and styling products/Electric Curling Iron-Tong.jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Electric Curling Iron-Tong.jpg",
     category: "Hair Tools",
   },
   {
@@ -305,7 +305,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Babyliss Hot Brush",
     description: "Smooths and dries hair",
     price: 75,
-    image: "/hairimages/Babyliss hair care and styling products/Babyliss Hot Brush-Heated Brush.jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Babyliss Hot Brush-Heated Brush.jpg",
     category: "Hair Tools",
   },
   {
@@ -313,7 +313,7 @@ export const fetchHairProducts = (): Product[] => [
     name: "Air Styler",
     description: "All-in-one styling tool",
     price: 50,
-    image: "/hairimages/Babyliss hair care and styling products/Air Styler-Hot Air Brush.jpg",
+    image: "/HairImages/Babyliss hair care and styling products/Air Styler-Hot Air Brush.jpg",
     category: "Hair Tools",
   },
 ];

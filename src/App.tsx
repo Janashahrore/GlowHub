@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Haircare from './pages/HairCare/Haircare';
-import Skincare from './pages/Skincare';
-import Makeup from './pages/Makeup';
+import Skincare from './pages/SkinCare/Skincare';
+import Makeup from './pages/Makeup/Makeup';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Login from './pages/Login';
