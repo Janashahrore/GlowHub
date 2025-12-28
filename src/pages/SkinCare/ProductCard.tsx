@@ -1,15 +1,9 @@
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Card, CardMedia, CardContent, Typography, Box, IconButton } from "@mui/material";
+import { ShoppingCart as ShoppingCartIcon } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import type { SkinProduct } from "../../api/SkinCareAPI";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-
+import type { Product } from "../../api/SkinCareAPI";
 interface ProductCardProps {
-  product: SkinProduct;
+  product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
@@ -18,11 +12,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Card
       sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
         maxWidth: 250,
+        borderRadius: "10px",
         m: "auto",
         transition: "all 0.3s ease",
-        "&:hover": {
-          transform: "scale(1.05)",
+        "&:hover .product-image": {
+          transform: "scale(1.15)",
         },
       }}
     >
@@ -31,7 +29,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         height="200"
         image={product.image}
         alt={product.name}
-        sx={{ objectFit: "cover" }}
+        className="product-image"
+        sx={{ 
+          objectFit: "contain",
+          transition: "transform 0.3s ease",
+        }}
       />
 
       <CardContent>
@@ -58,7 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           }}
         >
           <Typography variant="subtitle1" fontWeight="bold">
-            ${product.price}
+            ₪{product.price}
           </Typography>
 
           <IconButton onClick={() => navigate("/cart")}>

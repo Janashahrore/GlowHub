@@ -9,7 +9,7 @@ import type { Product } from "../../api/HairAPI";
 const HairCarePage = () => {
   const theme = useTheme();
 
-  // Refs للأقسام (نفس skincare)
+  // Refs للأقسام 
   const oilsRef = useRef<HTMLDivElement | null>(null);
   const serumsRef = useRef<HTMLDivElement | null>(null);
   const creamsRef = useRef<HTMLDivElement | null>(null);
@@ -20,12 +20,13 @@ const HairCarePage = () => {
   // State للمنتجات
   const [products, setProducts] = useState<Product[]>([]);
 
-  // جلب المنتجات من Fake API (نفس skincare)
+  // جلب المنتجات من Fake API 
   useEffect(() => {
     const fetchData = async () => {
       const data = fetchHairProducts();
       setProducts(data);
     };
+  
     fetchData();
   }, []);
 
@@ -47,7 +48,7 @@ const HairCarePage = () => {
           />
 
           {/* Category Buttons */}
-          <Stack direction="row" spacing={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
+          <Stack direction="row" gap={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
             {[
               { name: "Hair Oils", ref: oilsRef },
               { name: "Hair Serums", ref: serumsRef },
@@ -86,7 +87,7 @@ const HairCarePage = () => {
               {products
                 .filter((p) => p.category === cat.name)
                 .map((p) => (
-                  <Grid item xs={12} sm={6} md={4} lg={3} key={p.id}>
+                  <Grid item xs={6} sm={4} md={3} key={p.id}>
                     <ProductCard product={p} />
                   </Grid>
                 ))}
@@ -94,11 +95,12 @@ const HairCarePage = () => {
           </Box>
         ))}
       </Container>
+
     </>
   );
 };
 
-// Button style (نفس skincare)
+// Button style
 const buttonStyle = (theme: Theme) => ({
   backgroundColor: "#D6A99D",
   color: theme.palette.text.primary,

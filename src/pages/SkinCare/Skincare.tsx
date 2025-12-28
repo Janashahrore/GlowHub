@@ -1,10 +1,10 @@
-import { Box, Container, Typography, Button, Stack, Grid} from "@mui/material";
+import { Box, Container, Typography, Button, Stack, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import type { Theme } from "@mui/material/styles";
 import { useRef, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { fetchSkinProducts } from "../../api/SkinCareAPI";
-import type { SkinProduct } from '../../api/SkinCareAPI';
+import type { Product } from '../../api/SkinCareAPI';
 
 const Skincare = () => {
   const theme = useTheme();
@@ -20,7 +20,7 @@ const Skincare = () => {
   const eyeCreamsRef = useRef<HTMLDivElement | null>(null);
 
   // State للمنتجات و Snackbar
-  const [products, setProducts] = useState<SkinProduct[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   // جلب المنتجات من Fake API
   useEffect(() => {
@@ -39,7 +39,7 @@ const Skincare = () => {
         <Container maxWidth="lg">
           <Box
             component="img"
-            src="/images/hair_care.jpg"
+            src="/images/skin_care.jpg"
             alt="Hair Care"
             sx={{
               width: "100%",
@@ -50,7 +50,7 @@ const Skincare = () => {
           />
 
           {/* Category Buttons */}
-          <Stack direction="row" spacing={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
+          <Stack direction="row" gap={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
             {[
               { name: "Cleansers", ref: cleansersRef },
               { name: "Moisturizers", ref: moisturizersRef },
@@ -91,7 +91,7 @@ const Skincare = () => {
               {products
                 .filter((p) => p.category === cat.name)
                 .map((p) => (
-                  <Grid item xs={12} sm={6} md={4} lg={3} key={p.id}>
+                  <Grid item xs={6} sm={4} md={3} key={p.id}>
                     <ProductCard product={p} />
                   </Grid>
                 ))}

@@ -1,10 +1,10 @@
 import { Box, Container, Typography, Button, Stack, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import type { Theme } from "@mui/material/styles";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import { fetchMakeupProducts } from "../../api/MakeupAPI";
-import type { Product } from "../../api/MakeupAPI";
+import { fetchMakeupProducts } from "../../api/makeupapi";
+import type { Product } from "../../api/makeupapi";
 
 const MakeupPage = () => {
   const theme = useTheme();
@@ -16,7 +16,15 @@ const MakeupPage = () => {
   const essenceRef = useRef<HTMLDivElement | null>(null);
 
   // State
-  const [products] = useState<Product[]>(fetchMakeupProducts());
+  const [products, setProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = fetchMakeupProducts();
+      setProducts(data);
+    };
+  
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -36,11 +44,7 @@ const MakeupPage = () => {
           />
 
           {/* Brand Buttons */}
-          <Stack
-            direction="row"
-            spacing={2}
-            sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}
-          >
+          <Stack direction="row" gap={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
             {[
               { name: "Music Flower", ref: musicFlowerRef },
               { name: "Flormar", ref: flormarRef },
@@ -70,15 +74,12 @@ const MakeupPage = () => {
           { name: "Essence", ref: essenceRef },
         ].map((brand) => (
           <Box key={brand.name} ref={brand.ref} sx={{ mt: 10 }}>
-            <Typography variant="h5" align="center" sx={{ mb: 3 }}>
-              {brand.name}
-            </Typography>
-
+            <Typography variant="h5" align="center" sx={{ mb: 3 }}>{brand.name}</Typography>
             <Grid container spacing={3}>
               {products
                 .filter((p) => p.brand === brand.name)
                 .map((p) => (
-                  <Grid item xs={12} sm={6} md={4} lg={3} key={p.id}>
+                  <Grid item xs={6} sm={4} md={3} key={p.id}>
                     <ProductCard product={p} />
                   </Grid>
                 ))}
@@ -90,7 +91,6 @@ const MakeupPage = () => {
   );
 };
 
-// نفس ستايل الأزرار
 const buttonStyle = (theme: Theme) => ({
   backgroundColor: "#D6A99D",
   color: theme.palette.text.primary,
