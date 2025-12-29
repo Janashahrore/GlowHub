@@ -40,7 +40,7 @@ createRoot(document.getElementById("root")!).render(
       <App />
     </ThemeProvider>
   </StrictMode>
-);
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
