@@ -1,28 +1,28 @@
 import { Box, Container, Typography, Button, Stack, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import type { Theme } from "@mui/material/styles";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import ProductCard from "./ProductCard";
 import { fetchMakeupProducts } from "../../api/makeupapi";
 import type { Product } from "../../api/makeupapi";
+import { CartContext } from "../../context/CartContext";
 
 const MakeupPage = () => {
   const theme = useTheme();
+  const cartContext = useContext(CartContext);
 
-  // Refs للبراندات
   const musicFlowerRef = useRef<HTMLDivElement | null>(null);
   const flormarRef = useRef<HTMLDivElement | null>(null);
   const sheglamRef = useRef<HTMLDivElement | null>(null);
   const essenceRef = useRef<HTMLDivElement | null>(null);
 
-  // State
   const [products, setProducts] = useState<Product[]>([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = fetchMakeupProducts();
       setProducts(data);
     };
-  
     fetchData();
   }, []);
 
@@ -53,9 +53,7 @@ const MakeupPage = () => {
             ].map((brand) => (
               <Button
                 key={brand.name}
-                onClick={() =>
-                  brand.ref.current?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => brand.ref.current?.scrollIntoView({ behavior: "smooth" })}
                 sx={buttonStyle(theme)}
               >
                 {brand.name}
@@ -66,7 +64,7 @@ const MakeupPage = () => {
       </Box>
 
       {/* Sections */}
-      <Container maxWidth="lg" sx={{ mt: 5 }}>
+      <Container maxWidth="lg" sx={{ fontWeight: 'bold', mt: 5, color: "#bfa338" }}>
         {[
           { name: "Music Flower", ref: musicFlowerRef },
           { name: "Flormar", ref: flormarRef },
@@ -93,7 +91,7 @@ const MakeupPage = () => {
 
 const buttonStyle = (theme: Theme) => ({
   backgroundColor: "#D6A99D",
-  color: theme.palette.text.primary,
+  color:"#ffffffff",
   borderRadius: 3,
   px: 5,
   fontWeight: "bold",

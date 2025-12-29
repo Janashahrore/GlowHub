@@ -3,8 +3,8 @@ import { useTheme } from "@mui/material/styles";
 import type { Theme } from "@mui/material/styles";
 import { useRef, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import { fetchHairProducts } from "../../api/HairAPI";
-import type { Product } from "../../api/HairAPI";
+import { fetchHairProducts } from "../../api/hairApi";
+import type { Product } from "../../api/hairApi";
 
 const HairCarePage = () => {
   const theme = useTheme();
@@ -35,17 +35,18 @@ const HairCarePage = () => {
       {/* Hero Section */}
       <Box sx={{ backgroundColor: theme.palette.background.default, py: 6, mt: 2 }}>
         <Container maxWidth="lg">
-          <Box
-            component="img"
-            src="/images/hair_care.jpg"
-            alt="Hair Care"
-            sx={{
-              width: "100%",
-              height: "600px",
-              objectFit: "cover",
-              borderRadius: "20px",
-            }}
-          />
+           <Box
+        component="img"
+        src="/images/hair_care.jpg"
+        alt="Hair Care"
+        sx={{
+          width: '100%',
+          height: '600px',
+          borderRadius: '20px', // الحواف دائرية
+          objectFit: 'cover',
+          mb: 5, // مسافة تحت الصورة
+        }}
+      />
 
           {/* Category Buttons */}
           <Stack direction="row" gap={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
@@ -72,7 +73,7 @@ const HairCarePage = () => {
       </Box>
 
       {/* Sections */}
-      <Container maxWidth="lg" sx={{ mt: 5 }}>
+      <Container maxWidth="lg" sx={{ fontWeight: 'bold', mt: 5, color: "#bfa338" }}>
         {[
           { name: "Hair Oils", ref: oilsRef },
           { name: "Hair Serums", ref: serumsRef },
@@ -102,8 +103,8 @@ const HairCarePage = () => {
 
 // Button style
 const buttonStyle = (theme: Theme) => ({
-  backgroundColor: "#D6A99D",
-  color: theme.palette.text.primary,
+  backgroundColor: "#d69da0ff",
+  color: "#ffffffff",
   borderRadius: 3,
   px: 5,
   fontWeight: "bold",

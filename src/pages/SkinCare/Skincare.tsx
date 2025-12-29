@@ -1,13 +1,15 @@
 import { Box, Container, Typography, Button, Stack, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import type { Theme } from "@mui/material/styles";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import ProductCard from "./ProductCard";
 import { fetchSkinProducts } from "../../api/SkinCareAPI";
 import type { Product } from '../../api/SkinCareAPI';
+import { CartContext } from "../../context/CartContext";
 
 const Skincare = () => {
   const theme = useTheme();
+  const cartContext = useContext(CartContext);
 
   // Refs للأقسام
   const cleansersRef = useRef<HTMLDivElement | null>(null);
@@ -19,18 +21,15 @@ const Skincare = () => {
   const sunscreensRef = useRef<HTMLDivElement | null>(null);
   const eyeCreamsRef = useRef<HTMLDivElement | null>(null);
 
-  // State للمنتجات و Snackbar
   const [products, setProducts] = useState<Product[]>([]);
 
-  // جلب المنتجات من Fake API
   useEffect(() => {
-  const fetchData = async () => {
-    const data = fetchSkinProducts();
-    setProducts(data);
-  };
-
-  fetchData();
-}, []);
+    const fetchData = async () => {
+      const data = fetchSkinProducts();
+      setProducts(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -40,17 +39,17 @@ const Skincare = () => {
           <Box
             component="img"
             src="/images/skin_care.jpg"
-            alt="Hair Care"
+            alt="Skin Care"
             sx={{
               width: "100%",
               height: "600px" ,
               objectFit: "cover",
               borderRadius: "20px",
             }}
-          />
+          />                                                
 
           {/* Category Buttons */}
-          <Stack direction="row" gap={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center" }}>
+          <Stack direction="row" gap={2} sx={{ mt: 5, flexWrap: "wrap", justifyContent: "center"}}>
             {[
               { name: "Cleansers", ref: cleansersRef },
               { name: "Moisturizers", ref: moisturizersRef },
@@ -74,7 +73,7 @@ const Skincare = () => {
       </Box>
 
       {/* Sections */}
-      <Container maxWidth="lg" sx={{ mt: 5 }}>
+      <Container maxWidth="lg" sx={{ fontWeight: 'bold', mt: 5, color: "#bfa338" }}>
         {[
           { name: "Cleansers", ref: cleansersRef },
           { name: "Moisturizers", ref: moisturizersRef },
@@ -99,15 +98,13 @@ const Skincare = () => {
           </Box>
         ))}
       </Container>
-
     </>
   );
 };
 
-// Button style
 const buttonStyle = (theme: Theme) => ({
   backgroundColor: '#D6A99D',
-  color: theme.palette.text.primary,
+  color: "#ffffffff",
   borderRadius: 3,
   px: 5,
   fontWeight: 'bold',

@@ -20,9 +20,18 @@ const Footer: React.FC = () => {
         alignItems="flex-start"
         flexWrap="wrap"
         mb={5}
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: 4, md: 0 },
+        }}
       >
-        {/* Logo + léora (Left) */}
-        <Box>
+        {/* Logo */}
+        <Box
+          sx={{
+            textAlign: { xs: "center", md: "left" },
+            width: { xs: "100%", md: "auto" },
+          }}
+        >
           <Typography variant="h5" fontWeight="bold" color="#E06B80">
             léora
           </Typography>
@@ -31,68 +40,60 @@ const Footer: React.FC = () => {
           </Typography>
         </Box>
 
-        {/* Middle Section: About Us + Quick Links + Payment Methods */}
+        {/* Middle Section */}
         <Box
           display="flex"
           justifyContent="center"
-          gap={12} // المسافات بينهم
+          gap={{ xs: 6, md: 12 }}
           flexWrap="wrap"
+          sx={{
+            flexDirection: { xs: "column", md: "row" },
+            textAlign: { xs: "center", md: "left" },
+            alignItems: { xs: "center", md: "flex-start" },
+            width: { xs: "100%", md: "auto" },
+          }}
         >
-         {/* About Us */}
-<Box textAlign="center" sx={{ maxWidth: "220px" }}> {/* حجم أصغر */}
-  <Typography variant="h6" fontWeight="bold" color="#E06B80" gutterBottom>
-    About Us
-  </Typography>
-  <Typography
-    variant="body2"
-    sx={{
-      whiteSpace: "pre-line",
-      lineHeight: 1.3, // مسافة بين السطور مرتبة
-      textAlign: "justify", // يحافظ على الشكل المنتظم للنص
-    }}
-  >
-    Léora is a cosmetics destination dedicated to enhancing your natural beauty. We offer a curated selection of makeup, skincare, and haircare products designed to suit every style and skin type.
-  </Typography>
-</Box>
-
+          {/* About Us */}
+          <Box sx={{ maxWidth: "260px", width: { xs: "100%", md: "auto" } }}>
+            <Typography variant="h6" fontWeight="bold" color="#E06B80" gutterBottom>
+              About Us
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                whiteSpace: "pre-line",
+                lineHeight: 1.3,
+                textAlign: "justify",
+              }}
+            >
+              Léora is a cosmetics destination dedicated to enhancing your natural
+              beauty. We offer a curated selection of makeup, skincare, and haircare
+              products designed to suit every style and skin type.
+            </Typography>
+          </Box>
 
           {/* Quick Links */}
-          <Box textAlign="center">
+          <Box sx={{ width: { xs: "100%", md: "auto" } }}>
             <Typography variant="h6" fontWeight="bold" color="#E06B80" gutterBottom>
               Quick Links
             </Typography>
-            <Link
-              href="/"
-              display="block"
-              sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}
-            >
+
+            <Link href="/" display="block" sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}>
               Home
             </Link>
-            <Link
-              href="/haircare"
-              display="block"
-              sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}
-            >
+            <Link href="/haircare" display="block" sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}>
               Hair Care
             </Link>
-            <Link
-              href="/skincare"
-              display="block"
-              sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}
-            >
+            <Link href="/skincare" display="block" sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}>
               Skin Care
             </Link>
-            <Link
-              href="/makeup"
-              display="block"
-              sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}
-            >
+            <Link href="/makeup" display="block" sx={{ color: "#5a4a42", textDecoration: "none", "&:hover": { color: "#EE6983" } }}>
               Makeup
             </Link>
           </Box>
 
           {/* Payment Methods */}
-          <Box textAlign="center">
+          <Box sx={{ width: { xs: "100%", md: "auto" } }}>
             <Typography variant="h6" fontWeight="bold" color="#E06B80" gutterBottom>
               Payment Methods
             </Typography>
@@ -103,8 +104,14 @@ const Footer: React.FC = () => {
           </Box>
         </Box>
 
-        {/* Contact Us (Right) */}
-        <Box textAlign="right">
+        {/* Contact Us */}
+        <Box
+          sx={{
+            textAlign: { xs: "center", md: "right" },
+            width: { xs: "100%", md: "auto" },
+            mt: { xs: 4, md: 0 },
+          }}
+        >
           <Typography variant="h6" fontWeight="bold" color="#E06B80" gutterBottom>
             Contact Us
           </Typography>
@@ -113,10 +120,8 @@ const Footer: React.FC = () => {
         </Box>
       </Box>
 
-      {/* ===== Divider Line ===== */}
       <Box borderTop={1} borderColor="grey.400" />
 
-      {/* ===== Copyright ===== */}
       <Box textAlign="center" mt={3}>
         <Typography variant="caption" color="#333">
           © 2025 léora Cosmetics. All rights reserved.

@@ -1,13 +1,19 @@
 import { Card, CardMedia, CardContent, Typography, Box, IconButton } from "@mui/material";
 import { ShoppingCart as ShoppingCartIcon } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import type { Product } from "../../api/SkinCareAPI";
+import { CartContext } from "../../context/CartContext";
+
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const navigate = useNavigate();
+  const cartContext = useContext(CartContext);
+
+  if (!cartContext) return null;
+
+  const { addToCart } = cartContext;
 
   return (
     <Card
@@ -19,51 +25,33 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         borderRadius: "10px",
         m: "auto",
         transition: "all 0.3s ease",
-        "&:hover .product-image": {
-          transform: "scale(1.15)",
-        },
+        "&:hover .product-image": { transform: "scale(1.15)" },
       }}
     >
       <CardMedia
         component="img"
         height="200"
         image={product.image}
-        alt={product.name}
+        alt={product.title || product.name}
         className="product-image"
-        sx={{ 
-          objectFit: "contain",
-          transition: "transform 0.3s ease",
-        }}
+        sx={{ objectFit: "contain", transition: "transform 0.3s ease" }}
       />
 
       <CardContent>
         <Typography variant="h6" align="center">
-          {product.name}
+          {product.title || product.name}
         </Typography>
 
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          align="center"
-          sx={{ mb: 1 }}
-        >
+        <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 1 }}>
           {product.description}
         </Typography>
 
-        {/* السعر + أيقونة السلة */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            mt: 1,
-          }}
-        >
-          <Typography variant="subtitle1" fontWeight="bold">
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mt: 1 }}>
+          <Typography variant="subtitle1" fontWeight="bold" sx={{ color: '#afa8a8ff'}}>
             ₪{product.price}
           </Typography>
 
-          <IconButton onClick={() => navigate("/cart")}>
+          <IconButton onClick={() => addToCart(product)}>
             <ShoppingCartIcon />
           </IconButton>
         </Box>

@@ -1,10 +1,18 @@
 export interface Product {
   id: number;
   name: string;
+  title: string;       // جديد
+  brand: string;       // جديد
   description: string;
   price: number;
   image: string;
-  category: "Hair Oils" | "Hair Serums" | "Hair Creams" | "Hair Masks" | "Shampoos" | "Hair Tools";
+  category:
+    | "Hair Oils"
+    | "Hair Serums"
+    | "Hair Creams"
+    | "Hair Masks"
+    | "Shampoos"
+    | "Hair Tools";
 }
 
 // Fake API function
@@ -13,6 +21,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 1,
     name: "Olive Oil",
+    title: "Olive Oil",
+    brand: "Natural Brand",
     description: "Moisturizes and reduces breakage",
     price: 30,
     image: "/HairImages/Hair Oils/Olive Oil-1.jpg",
@@ -21,6 +31,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 2,
     name: "Argan Oil",
+    title: "Argan Oil",
+    brand: "Natural Brand",
     description: "Adds shine and nourishment",
     price: 40,
     image: "/HairImages/Hair Oils/Argan Oil.avif",
@@ -29,6 +41,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 3,
     name: "Castor Oil",
+    title: "Castor Oil",
+    brand: "Natural Brand",
     description: "Stimulates growth and strengthens roots",
     price: 45,
     image: "/HairImages/Hair Oils/Castor Oil.avif",
@@ -37,6 +51,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 4,
     name: "Coconut Oil",
+    title: "Coconut Oil",
+    brand: "Natural Brand",
     description: "Prevents hair loss and deeply moisturizes",
     price: 45,
     image: "/HairImages/Hair Oils/coconut oil.avif",
@@ -45,6 +61,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 5,
     name: "Jojoba Oil",
+    title: "Jojoba Oil",
+    brand: "Natural Brand",
     description: "Lightweight, similar to natural oils",
     price: 45,
     image: "/HairImages/Hair Oils/jojoba oil.avif",
@@ -53,6 +71,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 6,
     name: "Rosemary Oil",
+    title: "Rosemary Oil",
+    brand: "Natural Brand",
     description: "Supports growth and scalp health",
     price: 40,
     image: "/HairImages/Hair Oils/Rosemary Oil.avif",
@@ -61,6 +81,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 7,
     name: "Almond Oil",
+    title: "Almond Oil",
+    brand: "Natural Brand",
     description: "Reduces dryness and frizz",
     price: 45,
     image: "/HairImages/Hair Oils/Almond Oil.avif",
@@ -69,6 +91,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 8,
     name: "Avocado Oil",
+    title: "Avocado Oil",
+    brand: "Natural Brand",
     description: "Maintains moisture and shine",
     price: 45,
     image: "/HairImages/Hair Oils/Avocado Oil.avif",
@@ -77,6 +101,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 9,
     name: "Grapeseed Oil",
+    title: "Grapeseed Oil",
+    brand: "Natural Brand",
     description: "Very lightweight, adds shine",
     price: 30,
     image: "/HairImages/Hair Oils/Grapeseed Oil.avif",
@@ -85,6 +111,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 10,
     name: "Apricot Oil",
+    title: "Apricot Oil",
+    brand: "Natural Brand",
     description: "Natural softness and shine",
     price: 45,
     image: "/HairImages/Hair Oils/Apricot Oil.avif",
@@ -95,6 +123,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 11,
     name: "Repair Mask",
+    title: "Repair Mask",
+    brand: "Mask Brand",
     description: "Repairs damage and strengthens hair",
     price: 50,
     image: "/HairImages/Hair Masks/Repair Mask.webp",
@@ -103,6 +133,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 12,
     name: "Deep Conditioning Mask",
+    title: "Deep Conditioning Mask",
+    brand: "Mask Brand",
     description: "Moisturizes and adds shine",
     price: 80,
     image: "/HairImages/Hair Masks/Deep Conditioning Mask.webp",
@@ -111,6 +143,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 13,
     name: "Oily Scalp Mask",
+    title: "Oily Scalp Mask",
+    brand: "Mask Brand",
     description: "Reduces oil and dandruff",
     price: 50,
     image: "/HairImages/Hair Masks/Oily Scalp Mask.webp",
@@ -119,6 +153,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 14,
     name: "Purple Intensive Mask",
+    title: "Purple Intensive Mask",
+    brand: "Mask Brand",
     description: "Treats split ends and frizz",
     price: 80,
     image: "/HairImages/Hair Masks/Purple Mask.webp",
@@ -129,6 +165,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 15,
     name: "Deep Moisturizing Cream",
+    title: "Deep Moisturizing Cream",
+    brand: "Cream Brand",
     description: "Treats dryness and split ends",
     price: 35,
     image: "/HairImages/Hair Creams/Deep Moisturizing Cream.jpg",
@@ -137,6 +175,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 16,
     name: "Keratin & Shea Butter Cream",
+    title: "Keratin & Shea Butter Cream",
+    brand: "Cream Brand",
     description: "Repairs split ends and prevents frizz",
     price: 30,
     image: "/HairImages/Hair Creams/Keratin & Shea Butter Cream.webp",
@@ -147,6 +187,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 17,
     name: "Heat Protection Serum",
+    title: "Heat Protection Serum",
+    brand: "Serum Brand",
     description: "Apply before blow-drying",
     price: 30,
     image: "/HairImages/Hair Serums/Heat Protection Serum.webp",
@@ -155,6 +197,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 18,
     name: "Shine & Smooth Serum",
+    title: "Shine & Smooth Serum",
+    brand: "Serum Brand",
     description: "Adds shine and reduces frizz",
     price: 40,
     image: "/HairImages/Hair Serums/Shine & Smooth Serum.jpg",
@@ -163,6 +207,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 19,
     name: "Serum for Colored Hair",
+    title: "Serum for Colored Hair",
+    brand: "Serum Brand",
     description: "Maintains color vibrancy",
     price: 50,
     image: "/HairImages/Hair Serums/Serum for Colored Hair.webp",
@@ -173,6 +219,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 20,
     name: "Pantene Daily Care Shampoo",
+    title: "Pantene Daily Care Shampoo",
+    brand: "Pantene",
     description: "Gentle daily cleansing for all hair types",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Daily Care - Classic Clean Shampoo.avif",
@@ -181,14 +229,20 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 21,
     name: "Pantene Anti Hair Fall Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Reduces hair fall and strengthens roots",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Anti Hair Fall Shampoo.webp",
     category: "Shampoos",
   },
+  // … أكمل باقي المنتجات بنفس الأسلوب …
+
   {
     id: 22,
     name: "Pantene Anti-Dandruff Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Treats dandruff and cleanses hair",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Anti-Dandruff Shampoo (2-in-1).webp",
@@ -197,6 +251,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 23,
     name: "Pantene Smooth & Silky Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Reduces frizz and adds softness",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Smooth & Silky Shampoo.jpg",
@@ -205,6 +261,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 24,
     name: "Pantene Moisture Renewal Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Moisturizes dry and brittle hair",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Moisture Renewal Shampoo.avif",
@@ -213,6 +271,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 25,
     name: "Pantene Colored Hair Repair Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Maintains color and shine",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Colored Hair Repair Shampoo.avif",
@@ -221,6 +281,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 26,
     name: "Pantene Nature Fusion Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Botanical extracts for nourishment",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Nature Fusion Shampoo.webp",
@@ -229,6 +291,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 27,
     name: "Pantene Sheer Volume Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Adds volume and thickness",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Sheer Volume Shampoo.avif",
@@ -237,6 +301,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 28,
     name: "Pantene Milky Damage Repair Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Repairs damaged hair",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Milky Damage Repair Shampoo.jpg",
@@ -245,6 +311,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 29,
     name: "Pantene Micellar Shampoo",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Gentle cleansing without stripping oils",
     price: 30,
     image: "/HairImages/Pantene Shampoos/Pantene Micellar Gentle Cleansing Shampoo.jpg",
@@ -255,6 +323,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 30,
     name: "Babyliss Compact Hair Dryer",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "2400W powerful dryer",
     price: 330,
     image: "/HairImages/Babyliss hair care and styling products/Babyliss Compact Hair Dryer (2400 W).jpg",
@@ -263,6 +333,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 31,
     name: "Babyliss Ionic Hair Dryer",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Reduces frizz with ionic technology",
     price: 250,
     image: "/HairImages/Babyliss hair care and styling products/Babyliss Ionic Hair Dryer (2100 W).jpg",
@@ -271,6 +343,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 32,
     name: "Babyliss 2-in-1 Straightener",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Straightens and curls hair",
     price: 450,
     image: "/HairImages/Babyliss hair care and styling products/Babyliss ST482E-ST330E 2-in-1 Straightener.jpg",
@@ -279,6 +353,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 33,
     name: "Babyliss Pro Straightener",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Professional straightener",
     price: 150,
     image: "/HairImages/Babyliss hair care and styling products/Babyliss Pro Professional Straightener.jpg",
@@ -287,6 +363,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 34,
     name: "Babyliss Curl & Wave Trio",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "3 interchangeable heads",
     price: 350,
     image: "/HairImages/Babyliss hair care and styling products/Babyliss Curl & Wave Trio Curling and Wave Device.jpg",
@@ -295,6 +373,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 35,
     name: "Electric Curling Iron",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Traditional curls",
     price: 200,
     image: "/HairImages/Babyliss hair care and styling products/Electric Curling Iron-Tong.jpg",
@@ -303,6 +383,8 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 36,
     name: "Babyliss Hot Brush",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "Smooths and dries hair",
     price: 170,
     image: "/HairImages/Babyliss hair care and styling products/Babyliss Hot Brush-Heated Brush.jpg",
@@ -311,9 +393,12 @@ export const fetchHairProducts = (): Product[] => [
   {
     id: 37,
     name: "Air Styler",
+    title: "Pantene Anti Hair Fall Shampoo",
+    brand: "Pantene",
     description: "All-in-one styling tool",
     price: 150,
     image: "/HairImages/Babyliss hair care and styling products/Air Styler-Hot Air Brush.jpg",
     category: "Hair Tools",
   },
 ];
+

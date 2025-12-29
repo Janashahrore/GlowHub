@@ -1,14 +1,21 @@
 import { Card, CardMedia, CardContent, Typography, Box, IconButton } from "@mui/material";
 import { ShoppingCart as ShoppingCartIcon } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
-import type { Product } from "../../api/hairApi";
+import { useContext } from "react";
+import type { Product } from "../../types/Product.type";
+import { CartContext } from "../../context/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const navigate = useNavigate();
+  const cartContext = useContext(CartContext);
+
+  if (!cartContext) {
+    throw new Error("CartContext not found. Make sure your app is wrapped with CartProvider.");
+  }
+
+  const { addToCart } = cartContext;
 
   return (
     <Card
@@ -45,8 +52,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }}
       >
         <Typography variant="h6" align="center">
-          {product.name}
-        </Typography>
+         {product.name} 
+      </Typography>
+
 
         <Typography
           variant="body2"
@@ -66,11 +74,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             mt: "auto",
           }}
         >
-          <Typography variant="subtitle1" fontWeight="bold">
-            ₪{product.price}
+          <Typography variant="subtitle1" fontWeight="bold" sx={{ color: '#afa8a8ff' }}>
+             ₪{product.price}
           </Typography>
 
-          <IconButton onClick={() => navigate("/cart")}>
+          {/* الزر الآن يضيف المنتج للكارت بدل Navigate */}
+          <IconButton onClick={() => addToCart(product)}>
             <ShoppingCartIcon />
           </IconButton>
         </Box>

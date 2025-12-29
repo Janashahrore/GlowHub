@@ -1,31 +1,19 @@
-import { Box, Typography, Button } from '@mui/material';
-import { useState } from 'react';
+import { Box, Typography, Button, IconButton } from '@mui/material';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-};
+import { CartContext } from '../context/CartContext';
+import { Add, Remove } from '@mui/icons-material';
 
 const Cart = () => {
   const navigate = useNavigate();
+  const cartContext = useContext(CartContext);
 
-  // بيانات تجريبية للمنتجات في السلة
-  const [cartItems, setCartItems] = useState<Product[]>([
-    { id: 1, name: 'Lipstick Rouge', price: 25, image: '/images/lipstick.png' },
-    { id: 2, name: 'Moisturizer Cream', price: 40, image: '/images/cream.png' },
-    { id: 3, name: 'Shampoo Smooth', price: 30, image: '/images/shampoo.png' },
-  ]);
+  if (!cartContext) return null;
 
-  // إزالة منتج من السلة
-  const removeItem = (id: number) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
-  };
+  const { cartItems, addToCart, removeFromCart } = cartContext;
 
   // حساب المجموع الكلي
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <Box style={{ padding: '24px', maxWidth: '900px', margin: '0 auto' }}>
@@ -52,22 +40,38 @@ const Cart = () => {
                 borderRadius: '10px',
               }}
             >
+              {/* صورة + اسم المنتج */}
               <Box style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <img
                   src={item.image}
                   alt={item.name}
                   style={{ width: '60px', height: '60px', objectFit: 'cover', borderRadius: '8px' }}
                 />
-                <Typography variant="h6">{item.name}</Typography>
+                <Typography variant="h6" sx={{color : '#afa8a8ff'}}>{item.name}</Typography>
               </Box>
 
-              <Box style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <Typography variant="h6">${item.price}</Typography>
+              {/* السعر + كمية + أزرار زيادة/نقص + حذف */}
+              <Box style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <IconButton onClick={() => addToCart(item)} style={{ color: '#ff5fa2' }}>
+                  <Add />
+                </IconButton>
+                <Typography>{item.quantity}</Typography>
+                <IconButton
+                  onClick={() => {
+                    if (item.quantity === 1) removeFromCart(item.id);
+                    else cartContext.addToCart({ ...item, quantity: 1 });
+                  }}
+                  style={{ color: '#ff5fa2' }}
+                >
+                  <Remove />
+                </IconButton>
+                <Typography style={{ minWidth: '60px', color:'#afa8a8ff' }}>
+                  ₪{item.price * item.quantity}
+                </Typography>
                 <Button
                   variant="contained"
-                  color="secondary"
-                  onClick={() => removeItem(item.id)}
-                  style={{ backgroundColor: '#ff5fa2' }}
+                  style={{ backgroundColor: '#ff5fa2', color: '#fff' }}
+                  onClick={() => removeFromCart(item.id)}
                 >
                   Remove
                 </Button>
@@ -85,18 +89,14 @@ const Cart = () => {
               fontWeight: 'bold',
             }}
           >
-            <Typography
-               variant="h5"
-               style={{ color: '#afa8a8ff', fontWeight: 'bold' }}
->
-               Total: ${totalPrice}
+            <Typography variant="h5" style={{ color: '#afa8a8ff', fontWeight: 'bold' }}>
+              Total: ₪{totalPrice}
             </Typography>
 
             <Button
               variant="contained"
-              color="primary"
-              onClick={() => navigate('/checkout')}
               style={{ backgroundColor: '#ff5fa2', color: 'white' }}
+              onClick={() => navigate('/checkout')}
             >
               Checkout
             </Button>
